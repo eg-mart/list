@@ -29,10 +29,10 @@ OBJS = $(addprefix $(OBJDIR)/, $(OBJS_NAMES))
 all : $(EXE)
 
 $(EXE) : $(OBJS)
-	$(CC) $(CFLAGS) -o $(EXE) $(OBJS)
+	@$(CC) $(CFLAGS) -o $(EXE) $(OBJS)
 
 $(OBJS): $(OBJDIR)/%.o: %.cpp | $(OBJDIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
