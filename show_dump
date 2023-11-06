@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./list
+dot -Tpng -o graph_dump.png graph_dump.dot && feh graph_dump.png
