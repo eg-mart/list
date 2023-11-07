@@ -10,8 +10,11 @@ int main()
 
 	size_t ind = 0;
 	for (int i = 0; i < 10; i++)
-		list_insert(&list, list.head, i, &ind);
+		list_insert(&list, (size_t) list.head, i, &ind);
 	list_insert(&list, 0, 20, &ind);
+	list_graphic_dump(&list);
+	for (int i = 0; i < 10; i++)
+		list_delete(&list, (size_t) list.head);
 	list_graphic_dump(&list);
 	list_dtor(&list);
 	return 0;

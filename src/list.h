@@ -21,5 +21,6 @@ const int POISON = INT_MAX;
 int list_ctor(struct List *list);
 void list_dtor(struct List *list);
 int list_insert(struct List *list, size_t dest, int x, size_t *ind);
+int list_delete(struct List *list, size_t dest);
 
 #endif

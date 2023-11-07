@@ -1,4 +1,5 @@
 #!/bin/bash
 
+rm graph_dump.dot
 ./list
-dot -Tpng -o graph_dump.png graph_dump.dot && feh graph_dump.png
+gvpack -array_1 graph_dump.dot | dot -Tpng -o graph_dump.png && feh graph_dump.png

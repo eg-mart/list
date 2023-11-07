@@ -65,5 +65,23 @@ int list_insert(struct List *list, size_t dest, int x, size_t *ind)
 	list->head = list->next[0];
 	list->tail = list->prev[0];
 
+	list->size++;
+
+	return 0;
+}
+
+int list_delete(struct List *list, size_t dest)
+{
+	list->next[list->prev[dest]] = list->next[dest];
+	list->prev[list->next[dest]] = list->prev[dest];
+	list->prev[dest] = -1;
+	list->next[dest] = list->free;
+	list->free = (int) dest;
+
+	list->head = list->next[0];
+	list->tail = list->prev[0];
+
+	list->size--;
+
 	return 0;
 }

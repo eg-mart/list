@@ -12,7 +12,7 @@ node [shape = \"Mrecord\"];\n\
 
 int list_graphic_dump(struct List *list)
 {
-	FILE *dump = fopen("graph_dump.dot", "w");
+	FILE *dump = fopen("graph_dump.dot", "a");
 	if (!dump) return 1;
 
 	fprintf(dump, "%s", BEGIN);
