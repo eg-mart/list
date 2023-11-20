@@ -9,12 +9,16 @@ int main()
 	list_ctor(&list);
 
 	size_t ind = 0;
-	for (int i = 0; i < 10; i++)
-		list_insert(&list, (size_t) list.head, i, &ind);
-	list_insert(&list, 0, 20, &ind);
+	int err = 0;
+	int i = 0;
+	while (!err) {
+		err = list_insert(&list, list.head, i, &ind);
+		if (!err)
+			i++;
+	}
+	list_delete(&list, list.tail);
 	list_graphic_dump(&list);
-	for (int i = 0; i < 10; i++)
-		list_delete(&list, (size_t) list.head);
+	list_defragment(&list);
 	list_graphic_dump(&list);
 	list_dtor(&list);
 	return 0;

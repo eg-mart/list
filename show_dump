@@ -2,4 +2,4 @@
 
 rm graph_dump.dot
 ./list
-gvpack -array_1 graph_dump.dot | dot -Tpng -o graph_dump.png && feh graph_dump.png
+gvpack -u graph_dump.dot | dot -Tpng -o graph_dump.png && feh graph_dump.png
